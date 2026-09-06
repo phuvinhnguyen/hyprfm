@@ -70,55 +70,6 @@ GridView {
             easing.type: Theme.animEasingEnter; easing.bezierCurve: Theme.animBezierCurve
         }
     }
-    add: Transition {
-        ParallelAnimation {
-            NumberAnimation {
-                properties: "opacity"
-                from: 0
-                to: 1
-                duration: Theme.animDurationFast
-                easing.type: Theme.animEasingEnter; easing.bezierCurve: Theme.animBezierCurve
-            }
-            NumberAnimation {
-                properties: "scale"
-                from: 0.94
-                to: 1
-                duration: Theme.animDuration
-                easing.type: Theme.animEasingEnter; easing.bezierCurve: Theme.animBezierCurve
-            }
-        }
-    }
-    addDisplaced: Transition {
-        NumberAnimation {
-            properties: "x,y"
-            duration: Theme.animDurationSlow
-            easing.type: Theme.animEasingEnter; easing.bezierCurve: Theme.animBezierCurve
-        }
-    }
-    remove: Transition {
-        ParallelAnimation {
-            NumberAnimation {
-                properties: "opacity"
-                to: 0
-                duration: Theme.animDurationFast
-                easing.type: Theme.animEasingExit; easing.bezierCurve: Theme.animBezierCurve
-            }
-            NumberAnimation {
-                properties: "scale"
-                to: 0.94
-                duration: Theme.animDurationFast
-                easing.type: Theme.animEasingExit; easing.bezierCurve: Theme.animBezierCurve
-            }
-        }
-    }
-    removeDisplaced: Transition {
-        NumberAnimation {
-            properties: "x,y"
-            duration: Theme.animDurationSlow
-            easing.type: Theme.animEasingEnter; easing.bezierCurve: Theme.animBezierCurve
-        }
-    }
-
     function moveSelection(delta, extend) {
         wheelScroller.stopAndSettle()
         if (count <= 0)

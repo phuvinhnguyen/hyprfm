@@ -252,6 +252,16 @@ private slots:
         QCOMPARE(model.activeIndex(), 0);
     }
 
+    void testTabListModelNewTabInheritsViewMode()
+    {
+        TabListModel model;
+        model.activeTab()->setViewMode("miller");
+
+        model.addTab();
+
+        QCOMPARE(model.activeTab()->viewMode(), QString("miller"));
+    }
+
     void testTabListModelCannotCloseLastTab()
     {
         TabListModel model;

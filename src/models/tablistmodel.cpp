@@ -117,8 +117,10 @@ TabModel *TabListModel::tabAt(int index) const
 
 void TabListModel::addTab()
 {
+    const QString viewMode = activeTab() ? activeTab()->viewMode() : QStringLiteral("grid");
     beginInsertRows(QModelIndex(), m_tabs.size(), m_tabs.size());
     auto *tab = new TabModel(this);
+    tab->setViewMode(viewMode);
     m_tabs.append(tab);
     connectTab(m_tabs.size() - 1, tab);
     endInsertRows();

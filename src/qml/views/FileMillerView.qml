@@ -357,55 +357,6 @@ FocusScope {
             boundsBehavior: Flickable.StopAtBounds
             boundsMovement: Flickable.StopAtBounds
             keyNavigationEnabled: false
-            add: Transition {
-                ParallelAnimation {
-                    NumberAnimation {
-                        properties: "opacity"
-                        from: 0
-                        to: 1
-                        duration: Theme.animDurationFast
-                        easing.type: Theme.animEasingEnter; easing.bezierCurve: Theme.animBezierCurve
-                    }
-                    NumberAnimation {
-                        properties: "scale"
-                        from: 0.98
-                        to: 1
-                        duration: Theme.animDuration
-                        easing.type: Theme.animEasingEnter; easing.bezierCurve: Theme.animBezierCurve
-                    }
-                }
-            }
-            addDisplaced: Transition {
-                NumberAnimation {
-                    properties: "x,y"
-                    duration: Theme.animDurationSlow
-                    easing.type: Theme.animEasingEnter; easing.bezierCurve: Theme.animBezierCurve
-                }
-            }
-            remove: Transition {
-                ParallelAnimation {
-                    NumberAnimation {
-                        properties: "opacity"
-                        to: 0
-                        duration: Theme.animDurationFast
-                        easing.type: Theme.animEasingExit; easing.bezierCurve: Theme.animBezierCurve
-                    }
-                    NumberAnimation {
-                        properties: "scale"
-                        to: 0.98
-                        duration: Theme.animDurationFast
-                        easing.type: Theme.animEasingExit; easing.bezierCurve: Theme.animBezierCurve
-                    }
-                }
-            }
-            removeDisplaced: Transition {
-                NumberAnimation {
-                    properties: "x,y"
-                    duration: Theme.animDurationSlow
-                    easing.type: Theme.animEasingEnter; easing.bezierCurve: Theme.animBezierCurve
-                }
-            }
-
             property var selectedIndices: []
             property int lastSelectedIndex: -1
             property int cursorIndex: -1
